@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Cookie Setter </title>
+
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body>
+  <h1> Cookie Setter </h1>
+  <div>Set a cookie on the root domain of this page via query string: `?cookie-key=cookie-value` </div>
+  <h2>Current cookies</h2>
+  @each((key, value) in request.cookiesList())
+    <div><span style="font-weight:bold">{{ value }}</span> = {{ key }}</div>
+    <br />
+  @end
+</body>
+</html>
